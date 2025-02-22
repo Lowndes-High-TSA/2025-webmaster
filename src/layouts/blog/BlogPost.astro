@@ -1,0 +1,14 @@
+---
+import Page from "../shared/Page.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Page title=`Blog | ${frontmatter.title}`>
+    <section>
+        <img class="py-3 rounded-lg" src={frontmatter.image.url} alt={frontmatter.image.alt} />
+        <article class="prose md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
+            <slot />
+        </article>
+    </section>
+</Page>

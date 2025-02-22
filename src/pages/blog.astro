@@ -1,7 +1,10 @@
 ---
+import type { MarkdownInstance } from "astro";
 import BlogCard from "../components/blog/BlogCard.astro";
 import BlogGrid from "../layouts/blog/BlogGrid.astro";
 import Page from "../layouts/shared/Page.astro";
+
+const posts: MarkdownInstance<Record<string, any>>[] = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
 <Page title="Blog">
@@ -12,25 +15,25 @@ import Page from "../layouts/shared/Page.astro";
 		<p class="mt-4 text-lg font-light">Dive into our blog for fresh perspectives, tips, and stories.</p>
 	  </div>
 	</section>
-  
+
 	<!-- Blog Section -->
-	<div class="bg-gray-50 py-20">
-	  <div class="container mx-auto px-4">
+	<div class="container bg-gray-50 px-4 py-20 mx-auto">
 		  <BlogGrid>
-			<BlogCard
-			  title="Support Verdant, Support Animals"
-			  summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet felis sit amet lorem bibendum."
-			  author="Aaron Wedger"
-			  lastUpdated="February 5, 2025"
-			/>
-			<BlogCard
-			  title="10 Benefits For Going Vegan"
-			  summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet felis sit amet lorem bibendum."
-			  author="Jack Smith"
-			  lastUpdated="February 1, 2025"
-			/>
-			<!-- More BlogCards can go here -->
-		  </BlogGrid>
-	  </div>
+			{
+				posts.map(
+					(post) => {
+						return <BlogCard
+							href={ post.url }
+							image={ post.frontmatter.image.url }
+							title={ post.frontmatter.title }
+							description={ post.frontmatter.description }
+							author={ post.frontmatter.author }
+							published={ new Date(post.frontmatter.published)
+								.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }
+						/>;
+					}
+				)
+			}
+		</BlogGrid>
 	</div>
 </Page>
