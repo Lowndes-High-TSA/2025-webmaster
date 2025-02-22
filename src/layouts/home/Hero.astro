@@ -2,28 +2,33 @@
 import Button from "../../components/shared/Button.astro";
 ---
 
-<section
-  class="w-full h-screen flex flex-col justify-center items-center text-center bg-cover bg-center bg-gradient-to-r from-green-600 via-green-500 to-green-400"
-  style="background-image: url('/images/home/hero.png');"
->
-  <div class="bg-black bg-opacity-60 p-10 rounded-lg shadow-lg transform transition-transform duration-500 hover:scale-105">
-    <h1 class="text-6xl font-extrabold text-white leading-tight tracking-wide drop-shadow-lg">
+<section class="grid grid-rows-1 grid-cols-1">
+  <div
+    class="w-full h-screen row-start-1 col-start-1 flex flex-col justify-center items-center text-center brightness-50 bg-cover bg-center bg-gradient-to-r from-green-600 via-green-500 to-green-400"
+    style="background-image: url('/images/home/hero.png');"
+  >
+  </div>
+  <div class="z-10 row-start-1 col-start-1 flex flex-col justify-center items-center">
+    <h1
+      class="mb-2 text-6xl text-center text-white font-extrabold leading-tight tracking-wide drop-shadow-lg"
+    >
       A Gold Standard of Vegan Fine-Dining
     </h1>
-    <p class="mt-6 text-lg text-gray-300 opacity-90">
-      Verdant offers over 500 exquisite dishes and exclusive access to fun experiences.
+    <p class="mb-6 text-2xl text-center text-green-100 opacity-90">
+      Verdant offers over 500 exquisite dishes and exclusive access to fun
+      experiences.
     </p>
-    <div class="mt-8 flex space-x-6 justify-center">
-      <Button
-        text="Reserve Table"
-        class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105"
-      />
-      <Button
-        text="View Menu"
-        class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 hover:border-green-600 transform transition-all duration-300 hover:scale-105"
-      />
-    </div>
-    <div class="mt-8 flex items-center justify-center space-x-3">
+	<div class="flex gap-6">
+		<Button
+			text="Reserve Table"
+			class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105"
+		/>
+		<Button
+			text="View Menu"
+			class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 hover:border-green-600 transform transition-all duration-300 hover:scale-105"
+		/>
+	</div>
+    <div class="mt-4 flex items-center justify-center space-x-3">
       <svg
         class="w-6 h-6 text-yellow-400"
         aria-hidden="true"
