@@ -8,26 +8,26 @@ import Button from "../../components/shared/Button.astro";
     style="background-image: url('/images/home/hero.png');"
   >
   </div>
-  <div class="row-start-1 col-start-1">
+  <div class="z-10 row-start-1 col-start-1 flex flex-col justify-center items-center">
     <h1
-      class="text-6xl text-center text-white font-extrabold leading-tight tracking-wide drop-shadow-lg"
+      class="mb-4 text-6xl text-center text-white font-extrabold leading-tight tracking-wide drop-shadow-lg"
     >
       A Gold Standard of Vegan Fine-Dining
     </h1>
-    <p class="mt-6 text-lg text-center text-gray-300 opacity-90">
+    <p class="text-2xl text-center text-green-100 opacity-90">
       Verdant offers over 500 exquisite dishes and exclusive access to fun
       experiences.
     </p>
-    <div class="mt-8 flex space-x-6 justify-center">
-      <Button
-        text="Reserve Table"
-        class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105"
-      />
-      <Button
-        text="View Menu"
-        class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 hover:border-green-600 transform transition-all duration-300 hover:scale-105"
-      />
-    </div>
+	<div class="mt-6">
+		<Button
+			text="Reserve Table"
+			class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg shadow-md transform transition-all duration-300 hover:scale-105"
+		/>
+		<Button
+			text="View Menu"
+			class="bg-transparent border-2 border-white text-white py-3 px-6 rounded-lg hover:bg-white hover:text-green-600 hover:border-green-600 transform transition-all duration-300 hover:scale-105"
+		/>
+	</div>
     <div class="mt-8 flex items-center justify-center space-x-3">
       <svg
         class="w-6 h-6 text-yellow-400"
