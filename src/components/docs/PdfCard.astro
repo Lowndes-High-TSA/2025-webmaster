@@ -4,7 +4,7 @@ import PdfView from "./PdfView.astro";
 const { heading, file } = Astro.props;
 ---
 
-<div class="bg-slate-200 rounded-md">
-  <h3 class="text-lg font-medium text-gray-700">{heading}</h3>
+<div class="bg-slate-200 rounded-md" style="padding: 20px;">
+  <h3 style="margin-bottom: 10px;" class="text-lg font-medium text-gray-700">{heading}</h3>
   <PdfView file={file} />
 </div>
