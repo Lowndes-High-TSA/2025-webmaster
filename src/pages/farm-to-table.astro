@@ -3,94 +3,109 @@ import Page from "../layouts/shared/Page.astro";
 ---
 
 <Page title="Farm-to-Table">
-  <!-- Hero Section -->
   <section class="relative bg-green-700 text-white text-center py-20">
-    <h1 class="text-5xl font-bold">Farm-to-Table Freshness</h1>
-    <p class="mt-4 text-lg">
-      From local farms to your plate, ensuring the highest quality and taste.
-    </p>
+    <h1 class="text-5xl font-bold">Verdant's Farm-to-Table Philosophy</h1>
+    <p class="mt-4 text-lg">Locally sourced, fresh, organic ingredients prepared daily in our scratch kitchen.</p>
   </section>
-
-  <!-- Introduction Section -->
-  <section class="max-w-6xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
-    <h2 class="text-3xl font-semibold text-green-700">
-      Our Farm-to-Table Commitment
-    </h2>
-    <p class="mt-4 text-lg">
-      Verdant sources ingredients daily from local farms, ensuring each dish is
-      prepared with the freshest, most sustainable produce.
-    </p>
-  </section>
-
-  <!-- Farm Partnerships -->
-  <section class="max-w-6xl mx-auto p-8 mt-10">
-    <h2 class="text-3xl font-semibold text-green-700 text-center">
-      Our Partnered Farms
-    </h2>
-    <div class="grid md:grid-cols-3 gap-6 mt-6 text-center">
-      <div
-        class="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300"
-      >
-        <h3 class="text-xl font-bold">Green Valley Organics</h3>
-        <p class="mt-2 text-gray-600">
-          Supplying us with fresh, pesticide-free vegetables.
-        </p>
+  
+  <section class="max-w-7xl mx-auto p-8 my-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h2 class="text-3xl font-bold text-green-700">Locally Sourced, Fresh, and Organic</h2>
+        <p class="mt-4 text-gray-600">At Verdant, we partner with local farmers to bring the freshest seasonal produce straight to your plate. Every ingredient is selected for its quality, sustainability, and taste.</p>
       </div>
-      <div
-        class="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300"
-      >
-        <h3 class="text-xl font-bold">Meadowbrook Farms</h3>
-        <p class="mt-2 text-gray-600">
-          Providing ethically sourced grains and legumes.
-        </p>
-      </div>
-      <div
-        class="bg-white shadow-lg p-6 rounded-lg transform hover:scale-105 transition duration-300"
-      >
-        <h3 class="text-xl font-bold">Orchard Bloom</h3>
-        <p class="mt-2 text-gray-600">
-          Delivering seasonal fruits straight from the trees.
-        </p>
+      <div class="bg-gray-200 h-64 flex items-center justify-center">
+        <img class="w-full h-64 rounded-lg object-cover" src="/images/farm-to-table/fresh-farm-produce.jpg" alt="Multiple baskets of fresh farm produce">
       </div>
     </div>
   </section>
-
-  <!-- Benefits of Farm-to-Table -->
-  <section class="max-w-6xl mx-auto p-8 mt-10 text-center">
-    <h2 class="text-3xl font-semibold text-green-700">
-      Why Farm-to-Table Matters
-    </h2>
-    <p class="mt-4 text-lg text-gray-700">Click to explore each benefit.</p>
-    <div class="mt-6 flex flex-wrap justify-center gap-6">
-      <button
-        class="bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-        >Fresher Ingredients</button
-      >
-      <button
-        class="bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-        >Supporting Local Farmers</button
-      >
-      <button
-        class="bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-        >Eco-Friendly Practices</button
-      >
-      <button
-        class="bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-        >Better Nutrition</button
-      >
+  
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto p-8">
+      <h2 class="text-3xl font-bold text-green-700 text-center">From Farm to Your Table</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <img class="w-full h-40 rounded-lg object-cover" src="/images/farm-to-table/chef-selecting-produce.webp" alt="Chef selecting produce">
+          </div>
+          <h3 class="text-xl font-bold">Sourcing</h3>
+          <p class="text-gray-600">We source directly from organic farms, ensuring sustainability and peak freshness.</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <img class="w-full h-40 rounded-lg object-cover" src="/images/farm-to-table/chef-preparing-meal.jpg" alt="Chef preparing meal">
+          </div>
+          <h3 class="text-xl font-bold">Preparation</h3>
+          <p class="text-gray-600">Our scratch kitchen transforms ingredients into globally inspired dishes.</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <img class="w-full h-40 rounded-lg object-cover" src="/images/farm-to-table/dish-served-at-the-table.webp" alt="Dished served at the table">
+          </div>
+          <h3 class="text-xl font-bold">Serving</h3>
+          <p class="text-gray-600">Every dish is served fresh, offering a vibrant farm-to-table experience.</p>
+        </div>
+      </div>
     </div>
   </section>
-
-  <!-- Call-to-Action -->
-  <section class="text-center mt-16">
-    <h2 class="text-2xl font-bold">Experience the Farm-to-Table Difference</h2>
-    <p class="mt-2 text-lg">
-      Join us in supporting local farms and savoring the freshest flavors.
-    </p>
-    <a
-      href="#"
-      class="mt-4 inline-block bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-      >Visit Verdant</a
-    >
+  
+  <section class="max-w-7xl mx-auto p-8 my-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-gray-200 h-64 flex items-center justify-center">
+        <img class="w-full h-64 rounded-lg object-cover" src="/images/farm-to-table/verdant-restaurant-ambiance.jpg" alt="Verdant restaurant ambiance">
+      </div>
+      <div>
+        <h2 class="text-3xl font-bold text-green-700">A Global Culinary Experience</h2>
+        <p class="mt-4 text-gray-600">Our chefs cook dishes that take inspiration from world cuisines, bringing worldwide flavors to each dish while remaining true to farm-to-table.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-gray-100 py-16">
+    <div class="max-w-7xl mx-auto p-8">
+      <h2 class="text-3xl font-bold text-green-700 text-center">Why Choose Farm-to-Table?</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <p class="text-gray-500">[Graphic Placeholder: Eco-friendly farming]</p>
+          </div>
+          <h3 class="text-xl font-bold">Sustainability</h3>
+          <p class="text-gray-600">By choosing local, organic produce, we reduce food miles, lower carbon footprints, and support eco-friendly farming practices.</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <p class="text-gray-500">[Graphic Placeholder: Chef selecting fresh ingredients]</p>
+          </div>
+          <h3 class="text-xl font-bold">Freshness & Quality</h3>
+          <p class="text-gray-600">Farm-to-table means peak ripeness, superior taste, and the highest nutritional value in every dish.</p>
+        </div>
+        <div class="text-center">
+          <div class="bg-gray-200 h-40 flex items-center justify-center mb-4">
+            <p class="text-gray-500">[Graphic Placeholder: Community farmers market]</p>
+          </div>
+          <h3 class="text-xl font-bold">Community Support</h3>
+          <p class="text-gray-600">Every meal supports local farmers, ensuring fair wages and strong agricultural communities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="max-w-7xl mx-auto p-8 my-10">
+    <h2 class="text-3xl font-bold text-green-700 text-center">Meet Our Partner Farms</h2>
+    <p class="text-gray-600 text-center mt-4">We work with a network of passionate farmers dedicated to sustainable and organic agriculture.</p>
+    <div class="grid md:grid-cols-2 gap-6 mt-8">
+      <div class="bg-gray-200 h-64 flex items-center justify-center">
+        <img class="w-full h-64 rounded-lg object-cover" src="/images/farm-to-table/green-valley-organics-farmer.jpg" alt="A local farmer from Green Valley Organics">
+      </div>
+      <div>
+        <h3 class="text-xl font-bold text-green-700">Green Valley Organics</h3>
+        <p class="mt-2 text-gray-600">Specializing in heirloom vegetables and pesticide-free farming, Green Valley Organics supplies Verdant with the freshest produce.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-green-700 text-white text-center py-16">
+    <h2 class="text-3xl font-bold">Join the Farm-to-Table Movement</h2>
+    <p class="mt-4 text-lg max-w-3xl mx-auto">Visit Verdant and experience the freshness of local, organic ingredients prepared with passion and care.</p>
   </section>
 </Page>
