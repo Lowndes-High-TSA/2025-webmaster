@@ -1,0 +1,76 @@
+---
+import FaqTile from "../../components/home/FaqTile.astro";
+
+const faqs = [
+  {
+    id: "faq1",
+    question: "Where is Verdant located?",
+    answer:
+      "Verdant is located in the heart of the city. Visit us at [insert address] and enjoy plant-based meals made with fresh, organic, locally sourced ingredients.",
+  },
+  {
+    id: "faq2",
+    question: "Why should I go to a vegan restaurant if I eat meat?",
+    answer:
+      "Even if you eat meat, you'll be amazed at how satisfying and flavorful plant-based meals can be. Our dishes are hearty and indulgent, with plenty of options to suit every taste!",
+  },
+  {
+    id: "faq3",
+    question: "Does Verdant truly support the environment?",
+    answer:
+      "Yes! We source from local farms, eliminate single-use plastics, and donate leftovers to shelters. Plus, we contribute 10% of profits to plant trees and help reduce CO2 emissions.",
+  },
+  {
+    id: "faq4",
+    question:
+      "What makes Verdant's food different from other vegan restaurants?",
+    answer:
+      "Our food stands out due to its bold flavors, international influences, and use of fresh, organic ingredients. We also offer exclusive food tastings and experimental dishes!",
+  },
+  {
+    id: "faq5",
+    question: "How does Verdant handle food sustainability and waste?",
+    answer:
+      "We focus on sustainability by using eco-friendly packaging, reducing waste, and donating leftovers. We also host volunteer tree-planting events to engage with the community.",
+  },
+  {
+    id: "faq6",
+    question: "What events does Verdant host?",
+    answer:
+      "We host a variety of fun events like birthday parties, gaming nights, live music, comedy shows, cooking classes, and exclusive food tastings for our members.",
+  },
+  {
+    id: "faq7",
+    question:
+      "How can I get involved in supporting the environment through Verdant?",
+    answer:
+      "You can support Verdant's environmental initiatives by joining our club, attending tree-planting events, and knowing that 10% of profits go to tree planting. Your membership helps make a difference!",
+  },
+  {
+    id: "faq8",
+    question: "How does Verdant ensure food safety and quality?",
+    answer:
+      "Our food safety practices include strict inventory management, proper food storage, cooking at safe temperatures, and regular kitchen sanitization to ensure top-quality meals.",
+  },
+  {
+    id: "faq9",
+    question: "Can I make a reservation at Verdant?",
+    answer:
+      "Yes! You can easily reserve a table on our website or by calling ahead to ensure you get a spot, especially on busy weekends or for special events.",
+  },
+];
+---
+
+<section class="mx-auto max-w-3xl py-12">
+	<h2 class="mb-8 text-center text-3xl font-bold text-green-600">
+		Frequently Asked Questions
+	</h2>
+
+	<div class="space-y-6">
+		{
+			faqs.map((faq) => (
+				<FaqTile id={faq.id} question={faq.question} answer={faq.answer} />
+			))
+		}
+	</div>
+</section>
