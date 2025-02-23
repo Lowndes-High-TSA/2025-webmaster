@@ -2,18 +2,18 @@
 import Page from "../layouts/shared/Page.astro";
 const categories = ["🥗 Salads", "🍝 Pastas", "🌱 Protein", "🍽️ Sides"];
 const menuItems = [
-  { name: "Avocado Salad", category: "🥗 Salads", price: "$10", description: "Avocados, mixed greens, cherry tomatoes, and citrus dressing.", image: "../images/menu/avocado-salad.jpg" },
-  { name: "Superfood Kale Salad", category: "🥗 Salads", price: "$10", description: "Kale, quinoa, blueberries, almonds, and lemon vinaigrette.", image: "../images/menu/kale-salad.jpg" },
-  { name: "Mediterranean Chickpea Salad", category: "🥗 Salads", price: "$10", description: "Chickpeas, cucumbers, olives, vegan feta, and tahini dressing.", image: "../images/menu/chickpea-salad.jpg" },
-  { name: "Truffle Mushroom Pasta", category: "🍝 Pastas", price: "$10", description: "Wild mushrooms, truffle oil, and creamy cashew sauce.", image: "../images/menu/truffle-pasta.jpg" },
-  { name: "Sun-Dried Tomato Pesto Pasta", category: "🍝 Pastas", price: "$10", description: "Sun-dried tomato pesto, roasted pine nuts, and fresh basil.", image: "../images/menu/pesto-pasta.webp" },
-  { name: "Spaghetti Primavera", category: "🍝 Pastas", price: "$10", description: "Seasonal vegetables, garlic, and olive oil.", image: "../images/menu/spaghetti.webp" },
-  { name: "BBQ Jackfruit Sliders", category: "🌱 Protein", price: "$10", description: "Smoked jackfruit with house-made barbecue sauce.", image: "../images/menu/jackfruit-sliders.jpg" },
-  { name: "Grilled Tofu Steak", category: "🌱 Protein", price: "$10", description: "Marinated tofu with herb-infused quinoa.", image: "../images/menu/tofu-steak.jpg" },
-  { name: "Chickpea Power Bowl", category: "🌱 Protein", price: "$10", description: "Roasted chickpeas, sweet potatoes, and tahini dressing.", image: "../images/menu/power-bowl.jpg" },
-  { name: "Garlic Herb Fries", category: "🍽️ Sides", price: "$10", description: "Crispy sweet potato fries with garlic and rosemary.", image: "../images/menu/garlic-fries.jpg" },
-  { name: "Spicy Roasted Cauliflower", category: "🍽️ Sides", price: "$10", description: "Oven-roasted cauliflower with chili lime seasoning.", image: "../images/menu/roasted-cauliflower.jpg" },
-  { name: "Avocado Toast", category: "🍽️ Sides", price: "$10", description: "Sourdough toast topped with smashed avocado and microgreens.", image: "../images/menu/avocado-toast.jpg" }
+	{ name: "Avocado Salad", category: "🥗 Salads", price: "$10", description: "Avocados, mixed greens, cherry tomatoes, and citrus dressing.", image: "../images/menu/avocado-salad.jpg" },
+	{ name: "Superfood Kale Salad", category: "🥗 Salads", price: "$10", description: "Kale, quinoa, blueberries, almonds, and lemon vinaigrette.", image: "../images/menu/kale-salad.jpg" },
+	{ name: "Mediterranean Chickpea Salad", category: "🥗 Salads", price: "$10", description: "Chickpeas, cucumbers, olives, vegan feta, and tahini dressing.", image: "../images/menu/chickpea-salad.jpg" },
+	{ name: "Truffle Mushroom Pasta", category: "🍝 Pastas", price: "$10", description: "Wild mushrooms, truffle oil, and creamy cashew sauce.", image: "../images/menu/truffle-pasta.jpg" },
+	{ name: "Sun-Dried Tomato Pesto Pasta", category: "🍝 Pastas", price: "$10", description: "Sun-dried tomato pesto, roasted pine nuts, and fresh basil.", image: "../images/menu/pesto-pasta.webp" },
+	{ name: "Spaghetti Primavera", category: "🍝 Pastas", price: "$10", description: "Seasonal vegetables, garlic, and olive oil.", image: "../images/menu/spaghetti.webp" },
+	{ name: "BBQ Jackfruit Sliders", category: "🌱 Protein", price: "$10", description: "Smoked jackfruit with house-made barbecue sauce.", image: "../images/menu/jackfruit-sliders.jpg" },
+	{ name: "Grilled Tofu Steak", category: "🌱 Protein", price: "$10", description: "Marinated tofu with herb-infused quinoa.", image: "../images/menu/tofu-steak.jpg" },
+	{ name: "Chickpea Power Bowl", category: "🌱 Protein", price: "$10", description: "Roasted chickpeas, sweet potatoes, and tahini dressing.", image: "../images/menu/power-bowl.jpg" },
+	{ name: "Garlic Herb Fries", category: "🍽️ Sides", price: "$10", description: "Crispy sweet potato fries with garlic and rosemary.", image: "../images/menu/garlic-fries.jpg" },
+	{ name: "Spicy Roasted Cauliflower", category: "🍽️ Sides", price: "$10", description: "Oven-roasted cauliflower with chili lime seasoning.", image: "../images/menu/roasted-cauliflower.jpg" },
+	{ name: "Avocado Toast", category: "🍽️ Sides", price: "$10", description: "Sourdough toast topped with smashed avocado and microgreens.", image: "../images/menu/avocado-toast.jpg" }
 ];
 ---
 
@@ -29,16 +29,16 @@ const menuItems = [
 	<!-- Menu Section -->
 	<section id="menu" class="bg-white max-w-7xl p-8 rounded-lg mx-auto my-10 shadow-lg">
 		<input
-		type="text"
-		id="search"
-		placeholder="Search menu..."
-		class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+			type="text"
+			id="search"
+			placeholder="Search menu..."
+			class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
 		/>
 		<div class="flex gap-4 mt-4 flex-wrap">
 		{categories.map(category => (
 			<button
-			class="px-4 py-2 bg-gray-200 rounded-md hover:bg-green-500 hover:text-white transition-colors"
-			onclick={`filterMenu('${category}')`}
+				class="px-4 py-2 bg-gray-200 rounded-md hover:bg-green-500 hover:text-white transition-colors"
+				onclick={`filterMenu('${category}')`}
 			>
 			{category}
 			</button>
@@ -59,18 +59,18 @@ const menuItems = [
 </Page>
 
 <script>
-  function filterMenu(category: string) {
-    const items = document.querySelectorAll('#menu-grid > div');
-    items.forEach(item => {
-      const itemCategory = item.querySelector('h3')!.innerText;
-      item.style.display = itemCategory.includes(category) ? 'block' : 'none';
-    });
-  }
-
-  document.getElementById('search')!.addEventListener('input', (e) => {
-    const value = e.target!.value.toLowerCase();
-    document.querySelectorAll('#menu-grid > div').forEach(item => {
-      item.style.display = item.innerText.toLowerCase().includes(value) ? 'block' : 'none';
-    });
-  });
+	export function filterMenu(category: string) {
+		const items = document.querySelectorAll('#menu-grid > div');
+		items.forEach(item => {
+			const itemCategory = item.querySelector('h3')!.innerText;
+			item.style.display = itemCategory.includes(category) ? 'block' : 'none';
+		});
+	}
+	
+	document.getElementById('search')!.addEventListener('input', (e) => {
+		const value = e.target!.value.toLowerCase();
+		document.querySelectorAll('#menu-grid > div').forEach(item => {
+			item.style.display = item.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+		});
+	});
 </script>
