@@ -2,12 +2,12 @@
 layout: ../../layouts/blog/BlogPost.astro
 title: '10 Benefits For Going Vegan'
 published: 2025-02-01
-description: 'This blog post will review 10 benefits of going vegan.'
+description: 'Explore 10 compelling benefits of going vegan, from better health to reducing environmental impact and supporting animal welfare.'
 author: 'Jack Smith'
 image:
     url: '../images/blog/placeholder.webp'
     alt: 'Placeholder energy'
-tags: ["vegetarian", "vegan", "food", "benefits", "ten benefits"]
+tags: ["vegan", "plant-based", "health", "animal welfare", "environment", "weight management", "energy", "sustainability", "longevity", "verdant"]
 ---
 
 ## 10 Benefits of Going Vegan

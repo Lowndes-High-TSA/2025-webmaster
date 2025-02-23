@@ -2,12 +2,12 @@
 layout: ../../layouts/blog/BlogPost.astro
 title: 'Support Verdant, Support Animals'
 published: 2025-02-05
-description: 'Support verdant, support animals'
+description: 'Discover how dining at Verdant supports ethical farming, animal welfare, and sustainability, making every meal a step toward a better world for animals and the planet.'
 author: 'Aaron Wedger'
 image:
     url: '../images/blog/placeholder.webp'
-    alt: 'Placeholder energy'
-tags: ["vegetarian", "vegan", "food", "animals", "rights"]
+    alt: 'Placeholder image'
+tags: ["animal welfare", "sustainability", "vegan", "plant-based", "ethical eating", "farm sanctuaries", "environmental impact", "cruelty-free", "verdant", "ethical farming", "support animals"]
 ---
 
 # How Verdant Champions Animal Welfare
