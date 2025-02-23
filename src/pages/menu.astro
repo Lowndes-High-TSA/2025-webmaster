@@ -1,107 +1,76 @@
 ---
 import Page from "../layouts/shared/Page.astro";
+const categories = ["🥗 Salads", "🍝 Pastas", "🌱 Protein", "🍽️ Sides"];
+const menuItems = [
+  { name: "Avocado Salad", category: "🥗 Salads", price: "$10", description: "Avocados, mixed greens, cherry tomatoes, and citrus dressing.", image: "../images/menu/avocado-salad.jpg" },
+  { name: "Superfood Kale Salad", category: "🥗 Salads", price: "$10", description: "Kale, quinoa, blueberries, almonds, and lemon vinaigrette.", image: "../images/menu/kale-salad.jpg" },
+  { name: "Mediterranean Chickpea Salad", category: "🥗 Salads", price: "$10", description: "Chickpeas, cucumbers, olives, vegan feta, and tahini dressing.", image: "../images/menu/chickpea-salad.jpg" },
+  { name: "Truffle Mushroom Pasta", category: "🍝 Pastas", price: "$10", description: "Wild mushrooms, truffle oil, and creamy cashew sauce.", image: "../images/menu/truffle-pasta.jpg" },
+  { name: "Sun-Dried Tomato Pesto Pasta", category: "🍝 Pastas", price: "$10", description: "Sun-dried tomato pesto, roasted pine nuts, and fresh basil.", image: "../images/menu/pesto-pasta.jpg" },
+  { name: "Spaghetti Primavera", category: "🍝 Pastas", price: "$10", description: "Seasonal vegetables, garlic, and olive oil.", image: "../images/menu/spaghetti.webp" },
+  { name: "BBQ Jackfruit Sliders", category: "🌱 Protein", price: "$10", description: "Smoked jackfruit with house-made barbecue sauce.", image: "../images/menu/jackfruit-sliders.jpg" },
+  { name: "Grilled Tofu Steak", category: "🌱 Protein", price: "$10", description: "Marinated tofu with herb-infused quinoa.", image: "../images/menu/tofu-steak.jpg" },
+  { name: "Chickpea Power Bowl", category: "🌱 Protein", price: "$10", description: "Roasted chickpeas, sweet potatoes, and tahini dressing.", image: "../images/menu/power-bowl.jpg" },
+  { name: "Garlic Herb Fries", category: "🍽️ Sides", price: "$10", description: "Crispy sweet potato fries with garlic and rosemary.", image: "../images/menu/garlic-fries.jpg" },
+  { name: "Spicy Roasted Cauliflower", category: "🍽️ Sides", price: "$10", description: "Oven-roasted cauliflower with chili lime seasoning.", image: "../images/menu/roasted-cauliflower.jpg" },
+  { name: "Avocado Toast", category: "🍽️ Sides", price: "$10", description: "Sourdough toast topped with smashed avocado and microgreens.", image: "../images/menu/avocado-toast.jpg" }
+];
 ---
 
 <Page title="Menu">
-  <!-- Hero Section -->
-  <section class="relative bg-green-700 text-white text-center py-20">
-    <h1 class="text-5xl font-bold">Verdant Menu</h1>
-    <p class="mt-4 text-lg">
-      Fresh, organic, and flavorful plant-based dishes.
-    </p>
-  </section>
-
-  <!-- Menu Categories -->
-  <section class="max-w-6xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
-    <h2 class="text-3xl font-semibold text-green-700 text-center">
-      Our Offerings
-    </h2>
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
-      <!-- Salads -->
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🥗 Salads</h3>
-        <ul class="mt-2 text-gray-600">
-          <li style="margin-bottom: 10px;">
-            <strong>Avocado Salad</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Avocados, mixed greens, cherry tomatoes, and citrus dressing.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Superfood Kale Salad</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Kale, quinoa, blueberries, almonds, and lemon vinaigrette.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Mediterranean Chickpea Salad</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Chickpeas, cucumbers, olives, vegan feta, and tahini dressing.
-          </li>
-        </ul>
-      </div>
-      <!-- Pastas -->
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🍝 Pastas</h3>
-        <ul class="mt-2 text-gray-600">
-          <li style="margin-bottom: 10px;">
-            <strong>Truffle Mushroom Pasta</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Wild mushrooms, truffle oil, and creamy cashew sauce.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Sun-Dried Tomato Pesto Pasta</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Sun-dried tomato pesto, roasted pine nuts, and fresh basil.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Spaghetti Primavera</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Seasonal vegetables, garlic, and olive oil.
-          </li>
-        </ul>
-      </div>
-      <!-- Proteins -->
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🌱 Protein</h3>
-        <ul class="mt-2 text-gray-600">
-          <li style="margin-bottom: 10px;">
-            <strong>BBQ Jackfruit Sliders</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Smoked jackfruit with house-made barbecue sauce.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Grilled Tofu Steak</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Marinated tofu with herb-infused quinoa.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Chickpea Power Bowl</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Roasted chickpeas, sweet potatoes, and tahini dressing.
-          </li>
-        </ul>
-      </div>
-      <!-- Sides -->
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🍽️ Sides</h3>
-        <ul class="mt-2 text-gray-600">
-          <li style="margin-bottom: 10px;">
-            <strong>Garlic Herb Fries</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Crispy sweet potato fries with garlic and rosemary.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Spicy Roasted Cauliflower</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Oven-roasted cauliflower with chili lime seasoning.
-          </li>
-          <li style="margin-bottom: 10px;">
-            <strong>Avocado Toast</strong>&nbsp;&nbsp;&nbsp;<em>$10</em>
-            <br>Sourdough toast topped with smashed avocado and microgreens.
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <p style="margin-top: 25px; color: gray;" class="text-center"><b>Note:</b> <em>If anyone in your party has a food allergy, please tell your waiter prior to being served.</em></p>
-  </section>
-
-  <!-- Call-to-Action -->
-  <section class="text-center mt-16">
-    <h2 class="text-2xl font-bold">Start the Verdant experience.</h2>
-    <a
-      href="#"
-      style="width: 400px; margin-bottom: 75px;"
-      class="mt-4 inline-block bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-      >Order Now</a
-    >
-  </section>
+	<!-- Hero Section -->
+	<section class="relative bg-green-700 text-white text-center py-32 flex flex-col items-center justify-center">
+		<div class="max-w-5xl px-6">
+			<h1 class="text-6xl font-extrabold drop-shadow-lg">Join Verdant's Culinary Journey</h1>
+			<p class="mt-6 text-lg opacity-90">Verdant offers a rich selection of handcrafted vegan dishes, each made with organic, sustainable ingredients.</p>
+			<a href="#menu" class="mt-8 inline-block bg-yellow-400 text-green-900 px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-yellow-300 transition">Explore the Menu</a>
+		</div>
+	</section>
+	<!-- Menu Section -->
+	<section id="menu" class="bg-white max-w-7xl p-8 rounded-lg mx-auto my-10 shadow-lg">
+		<input
+		type="text"
+		id="search"
+		placeholder="Search menu..."
+		class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+		/>
+		<div class="flex gap-4 mt-4 flex-wrap">
+		{categories.map(category => (
+			<button
+			class="px-4 py-2 bg-gray-200 rounded-md hover:bg-green-500 hover:text-white transition-colors"
+			onclick={`filterMenu('${category}')`}
+			>
+			{category}
+			</button>
+		))}
+		</div>
+		
+		<div id="menu-grid" class="grid md:grid-cols-3 gap-6 mt-6">
+		{menuItems.map(item => (
+			<div class="bg-gray-50 shadow-md p-4 rounded-lg transform transition-transform duration-300 hover:scale-105">
+			<img src={item.image} alt={item.name} class="w-full h-40 object-cover rounded-md" />
+			<h3 class="text-lg font-bold mt-2">{item.name}</h3>
+			<p class="text-gray-600">{item.description}</p>
+			<p class="text-green-700 font-semibold">{item.price}</p>
+			</div>
+		))}
+		</div>
+	</section>
 </Page>
+
+<script>
+  function filterMenu(category: string) {
+    const items = document.querySelectorAll('#menu-grid > div');
+    items.forEach(item => {
+      const itemCategory = item.querySelector('h3')!.innerText;
+      item.style.display = itemCategory.includes(category) ? 'block' : 'none';
+    });
+  }
+
+  document.getElementById('search')!.addEventListener('input', (e) => {
+    const value = e.target!.value.toLowerCase();
+    document.querySelectorAll('#menu-grid > div').forEach(item => {
+      item.style.display = item.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+    });
+  });
+</script>
