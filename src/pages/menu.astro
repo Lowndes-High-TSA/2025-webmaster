@@ -63,14 +63,14 @@ const menuItems = [
 		const items = document.querySelectorAll('#menu-grid > div');
 		items.forEach(item => {
 			const itemCategory = item.querySelector('h3')!.innerText;
-			item.style.display = itemCategory.includes(category) ? 'block' : 'none';
+			(item as HTMLElement).style.display = itemCategory.includes(category) ? 'block' : 'none';
 		});
 	}
 	
 	document.getElementById('search')!.addEventListener('input', (e) => {
-		const value = e.target!.value.toLowerCase();
+	const value = (e.target as HTMLInputElement).value.toLowerCase();
 		document.querySelectorAll('#menu-grid > div').forEach(item => {
-			item.style.display = item.innerText.toLowerCase().includes(value) ? 'block' : 'none';
+			(item as HTMLElement).style.display = (item as HTMLElement).innerText.toLowerCase().includes(value) ? 'block' : 'none';
 		});
 	});
 </script>
