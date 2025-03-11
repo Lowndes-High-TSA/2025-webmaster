@@ -1,84 +1,118 @@
 ---
+import Calendar from "../components/events/Calendar.astro";
 import Page from "../layouts/shared/Page.astro";
 ---
 
 <Page title="Events">
-  <!-- Hero Section -->
-  <section class="relative bg-green-700 text-white text-center py-20">
-    <h1 class="text-5xl font-bold">Exciting Events at Verdant</h1>
-    <p class="mt-4 text-lg">
-      Join us for unique experiences that bring our community together.
-    </p>
-  </section>
+	<!-- Hero Section -->
+	<section class="relative bg-green-700 text-white text-center py-24">
+		<div class="max-w-4xl mx-auto px-4">
+			<h1 class="text-5xl font-bold mb-6">Experience the Magic at Verdant</h1>
+			<p class="text-xl mb-8">
+				Join us for unforgettable events that celebrate community, creativity, and sustainability.
+			</p>
+			<a
+				href="#featured-events"
+				class="inline-block bg-white text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-green-100 transition-all"
+			>
+				Explore Events
+			</a>
+		</div>
+	</section>
 
-  <!-- Events List -->
-  <section class="max-w-6xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
-    <h2 class="text-3xl font-semibold text-green-700 text-center">
-      Upcoming Events
-    </h2>
-    <div class="grid md:grid-cols-2 gap-6 mt-6">
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🎂 Birthday Party</h3>
-        <p class="mt-2 text-gray-600">
-          Celebrate your special day with plant-based treats and a cozy
-          atmosphere.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🎮 Gaming Nights</h3>
-        <p class="mt-2 text-gray-600">
-          Enjoy competitive and casual gaming while indulging in great food.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🎶 Live Music Performances</h3>
-        <p class="mt-2 text-gray-600">
-          Experience local artists performing in an intimate and relaxing
-          setting.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">😂 Comedy Night</h3>
-        <p class="mt-2 text-gray-600">
-          Laugh the night away with stand-up performances from local comedians.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">👩‍🍳 Cooking Classes</h3>
-        <p class="mt-2 text-gray-600">
-          Learn to prepare delicious plant-based meals with expert chefs.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🌍 Sustainability Sessions</h3>
-        <p class="mt-2 text-gray-600">
-          Engage in discussions about eco-friendly practices and how you can
-          contribute.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🍽️ Exclusive Food Tastings</h3>
-        <p class="mt-2 text-gray-600">
-          Sample innovative dishes and give feedback on our experimental menu.
-        </p>
-      </div>
-      <div class="bg-gray-50 shadow-md p-6 rounded-lg">
-        <h3 class="text-xl font-bold">🌱 Tree Planting with Staff</h3>
-        <p class="mt-2 text-gray-600">
-          Join us in giving back to nature by planting trees together.
-        </p>
-      </div>
-    </div>
-  </section>
+	<!-- Featured Events Section -->
+	<section id="featured-events" class="max-w-6xl mx-auto px-6 py-16">
+		<h2 class="text-3xl font-bold text-green-700 text-center mb-8">Featured Events</h2>
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<!-- Event Card 1 -->
+			<div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+				<img
+					src="/images/events/vegan-cake.jpg"
+					alt="Vegan Cake Workshop"
+					class="w-full h-48 object-cover"
+				/>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-green-700">🎂 Vegan Cake Workshop</h3>
+					<p class="mt-2 text-gray-600">
+						Master the art of baking delicious plant-based cakes with our expert pastry chef.
+					</p>
+					<a
+						href="#"
+						class="mt-4 inline-block text-green-600 hover:text-green-700 font-semibold"
+					>
+						Learn More →
+					</a>
+				</div>
+			</div>
 
-  <!-- Call-to-Action -->
-  <section class="text-center mt-16">
-    <h2 class="text-2xl font-bold">Be Part of the Experience</h2>
-    <p class="mt-2 text-lg">Reserve your spot at our next event!</p>
-    <a
-      href="#"
-      class="mt-4 inline-block bg-green-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-green-700"
-      >View Full Calendar</a
-    >
-  </section>
+			<!-- Event Card 2 -->
+			<div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+				<img
+					src="/images/events/jazz-night.jpg"
+					alt="Acoustic Jazz Night"
+					class="w-full h-48 object-cover"
+				/>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-green-700">🎶 Acoustic Jazz Night</h3>
+					<p class="mt-2 text-gray-600">
+						Enjoy a soulful evening with live jazz performances from talented local artists.
+					</p>
+					<a
+						href="#"
+						class="mt-4 inline-block text-green-600 hover:text-green-700 font-semibold"
+					>
+						Learn More →
+					</a>
+				</div>
+			</div>
+
+			<!-- Event Card 3 -->
+			<div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+				<img
+					src="/images/events/green-living.jpg"
+					alt="Green Living Seminar"
+					class="w-full h-48 object-cover"
+				/>
+				<div class="p-6">
+					<h3 class="text-xl font-bold text-green-700">🌍 Green Living Seminar</h3>
+					<p class="mt-2 text-gray-600">
+						Join sustainability experts for a discussion on eco-friendly habits and zero-waste living.
+					</p>
+					<a
+						href="#"
+						class="mt-4 inline-block text-green-600 hover:text-green-700 font-semibold"
+					>
+						Learn More →
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Upcoming Events Section -->
+	<section class="bg-gray-50 py-16">
+		<div class="max-w-6xl mx-auto px-6">
+			<h2 class="text-3xl font-bold text-green-700 text-center mb-8">Upcoming Events</h2>
+			<p class="text-lg text-gray-600 text-center mb-12">
+				Do not miss out on our exciting lineup of events. Mark your calendar and join the fun!
+			</p>
+			<Calendar />
+		</div>
+	</section>
+
+	<!-- Call-to-Action Section -->
+	<section class="bg-green-600 text-white text-center py-20">
+		<div class="max-w-4xl mx-auto px-4">
+			<h2 class="text-4xl font-bold mb-6">Be Part of the Verdant Community</h2>
+			<p class="text-xl mb-8">
+				Reserve your spot at our next event and experience the magic of togetherness.
+			</p>
+			<a
+				href="#"
+				class="inline-block bg-white text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-green-100 transition-all"
+			>
+				Reserve Your Spot
+			</a>
+		</div>
+	</section>
 </Page>

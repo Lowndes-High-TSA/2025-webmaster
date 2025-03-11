@@ -1,0 +1,176 @@
+<div class="flex flex-col lg:flex-row gap-6 p-6">
+	<!-- Calendar -->
+	<div class="bg-white w-full lg:w-3/5 rounded-lg shadow-lg">
+		<header class="flex items-center justify-between p-6 pb-2">
+			<p class="font-medium text-xl" id="calendar-current-date"></p>
+			<div class="flex space-x-2">
+				<span id="calendar-prev" class="h-9 w-9 flex items-center justify-center cursor-pointer text-gray-600 hover:bg-gray-200 rounded-full text-2xl transition duration-150">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+					</svg>
+				</span>
+				<span id="calendar-next" class="h-9 w-9 flex items-center justify-center cursor-pointer text-gray-600 hover:bg-gray-200 rounded-full text-2xl transition duration-150">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+					</svg>
+				</span>
+			</div>
+		</header>
+
+		<div class="p-5">
+			<ul class="grid grid-cols-7 gap-2 text-center font-medium text-gray-600">
+				<li>Sun</li>
+				<li>Mon</li>
+				<li>Tue</li>
+				<li>Wed</li>
+				<li>Thu</li>
+				<li>Fri</li>
+				<li>Sat</li>
+			</ul>
+			<ul class="grid grid-cols-7 gap-2 mt-4" id="calendar-dates"></ul>
+		</div>
+	</div>
+
+	<!-- Event List -->
+	<section class="w-full lg:w-2/5 p-6 bg-white rounded-lg shadow-lg">
+		<h2 class="text-xl font-semibold">Events on Selected Date</h2>
+		<div id="event-list" class="mt-4 text-gray-700"></div>
+	</section>
+</div>
+
+<script>
+	interface Event {
+		date: string;
+		title: string;
+		description: string;
+	}
+
+	const events: Event[] = [
+		{ date: "2025-02-20", title: "🎂 Vegan Cake Workshop", description: "Master the art of baking delicious plant-based cakes with our expert pastry chef." },
+		{ date: "2025-02-22", title: "🎮 Retro Gaming Showdown", description: "Compete in classic arcade and console games for fun prizes and bragging rights." },
+		{ date: "2025-02-25", title: "🎶 Acoustic Jazz Night", description: "Enjoy a soulful evening with live jazz performances from talented local artists." },
+		{ date: "2025-02-28", title: "😂 Stand-Up & Open Mic", description: "Test your comedy skills or enjoy hilarious performances from up-and-coming comedians." },
+		{ date: "2025-03-02", title: "👩‍🍳 Plant-Based Pasta Making", description: "Learn to make fresh, homemade pasta using organic, vegan ingredients." },
+		{ date: "2025-03-05", title: "🌍 Green Living Seminar", description: "Join sustainability experts for a discussion on eco-friendly habits and zero-waste living." },
+		{ date: "2025-03-08", title: "🍷 Vegan Wine Tasting", description: "Sample exquisite vegan wines paired with artisan plant-based cheeses." },
+		{ date: "2025-03-12", title: "🌱 Urban Gardening 101", description: "Get hands-on experience in growing herbs and vegetables in small urban spaces." },
+		{ date: "2025-03-15", title: "🎤 Poetry & Spoken Word Night", description: "Express yourself or enjoy passionate poetry performances in an intimate setting." },
+		{ date: "2025-03-18", title: "🥗 Superfood Smoothie Challenge", description: "Blend your own nutrient-packed smoothies and compete for the tastiest creation!" },
+		{ date: "2025-03-22", title: "🛍️ Ethical Marketplace", description: "Browse and shop for sustainable, cruelty-free, and fair-trade products from local vendors." },
+		{ date: "2025-03-25", title: "🏋️‍♂️ Yoga & Mindfulness Retreat", description: "Unwind with guided meditation, breathwork, and beginner-friendly yoga." },
+		{ date: "2025-03-29", title: "🔥 Vegan BBQ Cookout", description: "Enjoy grilled plant-based delicacies and summer vibes with our special outdoor BBQ." },
+		{ date: "2025-04-02", title: "📖 Eco-Book Club Meetup", description: "Discuss inspiring books on sustainability, health, and plant-based living." },
+		{ date: "2025-04-05", title: "🎨 Paint & Plant Night", description: "Create art while potting a new houseplant to take home and nurture." },
+		{ date: "2025-04-09", title: "🥞 Sunday Brunch Social", description: "Indulge in our exclusive brunch menu with live acoustic music." },
+		{ date: "2025-04-13", title: "🐶 Adopt-a-Pet Day", description: "Meet rescue animals looking for a forever home and learn about ethical pet care." },
+		{ date: "2025-04-16", title: "🎭 Improvised Theater Workshop", description: "Boost creativity and confidence with fun, interactive improv exercises." },
+		{ date: "2025-04-19", title: "🍣 Vegan Sushi Rolling Class", description: "Learn the delicate art of sushi-making with fresh, plant-based ingredients." },
+		{ date: "2025-04-22", title: "🚴‍♂️ Community Bike Ride", description: "Explore scenic routes while promoting sustainable and healthy transportation." },
+		{ date: "2025-04-26", title: "🎶 Indie Folk Night", description: "Experience an intimate evening with live folk music and storytelling." },
+		{ date: "2025-04-30", title: "👕 Clothing Swap & Repair Café", description: "Reduce waste by swapping clothes and learning basic garment repair skills." },
+		{ date: "2025-05-03", title: "🍜 Ramen & Broth Masterclass", description: "Discover the secrets to crafting rich and flavorful plant-based ramen." },
+		{ date: "2025-05-07", title: "📷 Nature Photography Walk", description: "Capture breathtaking shots while strolling through lush green spaces." },
+		{ date: "2025-05-10", title: "🌮 Taco Tuesday Fiesta", description: "Enjoy unlimited plant-based tacos with handcrafted salsas and fresh toppings." },
+		{ date: "2025-05-14", title: "💃 Latin Dance Night", description: "Salsa, bachata, and merengue dance lessons followed by an open dance floor." },
+		{ date: "2025-05-18", title: "🏞️ Hiking & Meditation Retreat", description: "Reconnect with nature through mindful hiking and guided meditation." },
+		{ date: "2025-05-22", title: "🍞 Artisan Bread Baking", description: "Learn the science and technique behind crafting the perfect loaf of sourdough bread." },
+		{ date: "2025-05-26", title: "🧩 Trivia & Board Game Night", description: "Compete with friends in general knowledge trivia and classic board games." },
+		{ date: "2025-05-30", title: "📚 Writers' Open Mic", description: "Share your short stories, essays, or poetry in a supportive creative space." }
+	];
+
+
+	let selectedEvents: Event[] = [];
+	let date = new Date();
+	let year = date.getFullYear();
+	let month = date.getMonth();
+
+	const updateCalendar = (): void => {
+		const DAY_ONE = new Date(year, month, 1).getDay();
+		const LAST_DATE = new Date(year, month + 1, 0).getDate();
+		const DAY_END = new Date(year, month, LAST_DATE).getDay();
+		const MONTH_LAST_DATE = new Date(year, month, 0).getDate();
+		let lit = "";
+
+		// Previous month's dates
+		for (let i = DAY_ONE; i > 0; i--) {
+			lit += `
+				<li class='flex items-center justify-center w-10 h-10 p-3 text-gray-400'>
+					${MONTH_LAST_DATE - i + 1}
+				</li>
+			`;
+		}
+
+		// Current month's dates
+		for (let i = 1; i <= LAST_DATE; i++) {
+			const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`;
+			const eventExists = events.some(event => event.date === fullDate);
+			const isToday = i === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear() ? "bg-indigo-700 text-white" : "";
+			const eventIndicator = eventExists ? "bg-red-500 w-1 h-1 rounded-full absolute bottom-1 left-1/2 transform -translate-x-1/2" : "";
+
+			lit += `
+				<li class='relative flex items-center justify-center w-10 h-10 ${isToday} p-3 cursor-pointer rounded-full hover:bg-indigo-100 transition-all' data-date='${fullDate}'>
+					${i}
+					<span class='${eventIndicator}'></span>
+				</li>
+			`;
+		}
+
+		// Next month's dates
+		for (let i = DAY_END; i < 6; i++) {
+			lit += `
+				<li class='flex items-center justify-center w-10 h-10 p-3 text-gray-400'>
+					${i - DAY_END + 1}
+				</li>
+			`;
+		}
+
+		// Update the calendar header with the current month and year
+		const currentDateElement = document.querySelector<HTMLElement>("#calendar-current-date");
+		if (currentDateElement) {
+			currentDateElement.innerText = `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][month]} ${year}`;
+		}
+
+		// Render the calendar dates
+		const calendarDatesElement = document.querySelector<HTMLElement>("#calendar-dates");
+		if (calendarDatesElement) {
+			calendarDatesElement.innerHTML = lit;
+			calendarDatesElement.querySelectorAll("li").forEach(li => {
+				li.addEventListener("click", () => {
+					const selectedDate = li.getAttribute("data-date");
+					if (selectedDate) {
+						showEvents(selectedDate);
+					}
+				});
+			});
+		}
+	};
+
+	const showEvents = (selectedDate: string): void => {
+		selectedEvents = events.filter(event => event.date === selectedDate);
+		const eventListElement = document.querySelector<HTMLElement>("#event-list");
+		if (eventListElement) {
+			eventListElement.innerHTML = selectedEvents.length ? selectedEvents.map(event => `<div class='p-4 bg-gray-100 shadow rounded-lg'><h3 class='font-bold'>${event.title}</h3><p>${event.description}</p></div>`).join(" ") : "<p class='text-gray-500'>No events scheduled for this day.</p>";
+		}
+	};
+
+	document.addEventListener("DOMContentLoaded", () => {
+		updateCalendar();
+
+		const prevButton = document.querySelector<HTMLElement>("#calendar-prev");
+		const nextButton = document.querySelector<HTMLElement>("#calendar-next");
+
+		if (prevButton) {
+			prevButton.addEventListener("click", () => {
+				month--;
+				updateCalendar();
+			});
+		}
+
+		if (nextButton) {
+			nextButton.addEventListener("click", () => {
+				month++;
+				updateCalendar();
+			});
+		}
+	});
+</script>
